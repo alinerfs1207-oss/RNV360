@@ -249,21 +249,17 @@ section{padding:100px 52px}
 .bnote{font-size:11.5px;color:var(--w3);display:flex;align-items:center;gap:7px;padding-top:13px;border-top:1px solid var(--b)}
 .bnote svg{width:12px;height:12px;stroke:var(--a);fill:none;stroke-width:2;flex-shrink:0}
 /* PORTFOLIO */
-.ptbg{background:var(--d1)}
-.ptgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:64px}
-.ptc{border-radius:14px;overflow:hidden;border:1px solid var(--b);position:relative;aspect-ratio:16/10;background:var(--d3);display:block;transition:border-color .25s,box-shadow .25s}
-.ptc:hover{border-color:rgba(183,148,244,.35);box-shadow:0 14px 44px rgba(0,0,0,.5)}
-.ptc:hover .pov{opacity:1}
-.ptc:hover .ptimg{transform:scale(1.04)}
-.ptimg{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.pph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;padding:22px}
-.pphi{width:46px;height:46px;border-radius:10px;border:1px solid var(--b2);display:flex;align-items:center;justify-content:center}
-.pphi svg{width:19px;height:19px;stroke:var(--w3);fill:none;stroke-width:1.5}
-.pph h4{font-size:14.5px;color:var(--w2)}
-.pph p{font-size:11px;color:var(--w3);text-align:center}
-.pov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,7,.95) 0%,rgba(7,7,7,.4) 60%,transparent 100%);opacity:.7;transition:opacity .3s;display:flex;align-items:flex-end;padding:22px}
-.pi h4{font-size:16px;margin-bottom:4px}
-.pi p{font-size:12.5px;color:var(--w2)}
+.pt-list{max-width:860px;margin-left:auto;margin-right:auto}
+.pt-item{display:flex;align-items:center;gap:24px;padding:24px 28px;background:var(--d2);border:1px solid var(--b);border-radius:12px;color:var(--w);transition:all .25s;text-decoration:none}
+.pt-item:hover{border-color:rgba(183,148,244,.35);background:var(--d3);transform:translateX(6px)}
+.pt-item:hover .pt-arrow{color:var(--a);transform:translate(3px,-3px)}
+.pt-item-left{display:flex;align-items:center;gap:20px;flex:1;min-width:0}
+.pt-num{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--a);opacity:.5;flex-shrink:0;width:24px}
+.pt-name{font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px}
+.pt-desc{font-size:13px;color:var(--w3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pt-tag{flex-shrink:0;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:600;background:rgba(183,148,244,.08);border:1px solid rgba(183,148,244,.18);color:var(--a)}
+.pt-arrow{flex-shrink:0;color:var(--w3);transition:all .25s}
+@media(max-width:600px){.pt-tag{display:none}.pt-desc{display:none}}
 /* TESTIMONIALS */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
 .tc{background:var(--d2);border:1px solid var(--b);border-radius:16px;padding:30px}
@@ -434,7 +430,7 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
       <p>Fundada por Aline França, especialista com MBA em Neurociência, Consumo e Marketing. Cada elemento do seu site é pensado com base em como o cérebro humano processa confiança e toma decisões de compra.</p>
       <p>Não é só design. É ciência aplicada para fazer seu cliente dizer sim.</p>
       <div class="nauthor">
-        <img src="images/aline.png" alt="Aline França" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;border:2px solid rgba(183,148,244,.3)"/>
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--a3));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:17px;color:#fff;flex-shrink:0">A</div>
         <div><div class="aname">Aline França</div><div class="atit">MBA Neurociência, Consumo e Marketing</div></div>
       </div>
     </div>
@@ -620,32 +616,81 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
 <section class="ptbg" id="portfolio">
   <div style="text-align:center">
     <div class="stag rv" style="justify-content:center">Portfólio</div>
-    <h2 class="stit rv d1">Projetos <span class="gt">entregues</span></h2>
-    <p class="ssub rv d2" style="margin:0 auto">Sites reais, criados com estratégia, neurociência e atenção a cada detalhe de conversão.</p>
+    <h2 class="stit rv d1">Alguns dos nossos <span class="gt">projetos</span></h2>
+    <p class="ssub rv d2" style="margin:0 auto">Cada site foi construído para fazer o visitante sentir confiança, permanecer na página e tomar uma decisão. Clique para ver.</p>
   </div>
-  <div class="ptgrid">
-    <a href="https://servuscontabil.com.br" target="_blank" rel="noopener" class="ptc rv">
-      <img class="ptimg" src="images/servus.png" alt="Servus Contábil — site criado pela RNV360"/>
-      <div class="pov"><div class="pi"><h4>Servus Contábil</h4><p>Contabilidade para igrejas — posicionamento premium com identidade de fé</p></div></div>
+  <div class="pt-list rv" style="margin-top:64px;display:flex;flex-direction:column;gap:2px">
+
+    <a href="https://servuscontabil.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left">
+        <div class="pt-num">01</div>
+        <div>
+          <div class="pt-name">Servus Contábil</div>
+          <div class="pt-desc">Contabilidade para igrejas — posicionamento premium com identidade de fé</div>
+        </div>
+      </div>
+      <div class="pt-tag">Site completo</div>
+      <div class="pt-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </div>
     </a>
-    <a href="https://wfcont.com.br" target="_blank" rel="noopener" class="ptc rv d1">
-      <img class="ptimg" src="images/wf.png" alt="WF Consultoria Contábil — site criado pela RNV360"/>
-      <div class="pov"><div class="pi"><h4>WF Consultoria Contábil</h4><p>Site institucional com múltiplos serviços e captação de leads</p></div></div>
+
+    <a href="https://wfcont.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left">
+        <div class="pt-num">02</div>
+        <div>
+          <div class="pt-name">WF Consultoria Contábil</div>
+          <div class="pt-desc">Site institucional com múltiplos serviços e captação de leads</div>
+        </div>
+      </div>
+      <div class="pt-tag">Site completo</div>
+      <div class="pt-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </div>
     </a>
-    <a href="https://nexustaxbrasil.com.br" target="_blank" rel="noopener" class="ptc rv">
-      <img class="ptimg" src="images/nexus.png" alt="Nexus Tax Brasil — site criado pela RNV360"/>
-      <div class="pov"><div class="pi"><h4>Nexus Tax Brasil</h4><p>Consultoria tributária internacional — credibilidade e expertise global</p></div></div>
+
+    <a href="https://nexustaxbrasil.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left">
+        <div class="pt-num">03</div>
+        <div>
+          <div class="pt-name">Nexus Tax Brasil</div>
+          <div class="pt-desc">Consultoria tributária internacional — credibilidade e expertise global</div>
+        </div>
+      </div>
+      <div class="pt-tag">Site completo</div>
+      <div class="pt-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </div>
     </a>
-    <a href="http://tactusdesign.com.br" target="_blank" rel="noopener" class="ptc rv d1">
-      <img class="ptimg" src="images/tactus.png" alt="Tactus Design — site criado pela RNV360"/>
-      <div class="pov"><div class="pi"><h4>Tactus Design</h4><p>Móveis planejados — design premium com foco em conversão</p></div></div>
+
+    <a href="http://tactusdesign.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left">
+        <div class="pt-num">04</div>
+        <div>
+          <div class="pt-name">Tactus Design</div>
+          <div class="pt-desc">Móveis planejados — design premium com foco em conversão</div>
+        </div>
+      </div>
+      <div class="pt-tag">Site completo</div>
+      <div class="pt-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </div>
     </a>
-  </div>
-  <div style="text-align:center;margin-top:16px" class="rv">
-    <a href="https://mri.alinefranca360.com.br" target="_blank" rel="noopener" class="ptc" style="display:inline-block;width:100%;max-width:700px;border-radius:14px;overflow:hidden;border:1px solid var(--b);position:relative;aspect-ratio:16/7">
-      <img class="ptimg" src="images/mri.png" alt="MRI Método Reconexão Interna — landing page criada pela RNV360" style="width:100%;height:100%;object-fit:cover"/>
-      <div class="pov"><div class="pi"><h4>MRI — Método Reconexão Interna</h4><p>Landing page de alta conversão com neurociência aplicada e copy emocional</p></div></div>
+
+    <a href="https://mri.alinefranca360.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left">
+        <div class="pt-num">05</div>
+        <div>
+          <div class="pt-name">MRI — Método Reconexão Interna</div>
+          <div class="pt-desc">Landing page de alta conversão com neurociência aplicada e copy emocional</div>
+        </div>
+      </div>
+      <div class="pt-tag">Landing page</div>
+      <div class="pt-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </div>
     </a>
+
   </div>
 </section>
 
