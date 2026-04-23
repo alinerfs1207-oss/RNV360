@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>RNV360 — Criação de Sites e Landing Pages com Neurociência</title>
+<meta name="description" content="Criação de sites profissionais e landing pages de alta conversão com neurociência aplicada. Bio profissional para influenciadores. São Paulo e todo o Brasil."/>
+<meta name="keywords" content="criação de site profissional, landing page alta conversão, site para empresa, bio para influencer, agência de sites São Paulo, neuromarketing"/>
+<link rel="canonical" href="https://rnv360.com.br/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --k:#070707;--d1:#0e0e0e;--d2:#151515;--d3:#1c1c1c;
+  --b:rgba(255,255,255,.06);--b2:rgba(255,255,255,.12);
+  --w:#f0ede8;--w2:rgba(240,237,232,.55);--w3:rgba(240,237,232,.3);
+  --a:#b794f4;--a2:#7c6ff7;--a3:#ed82b4;--g:#c9a84c;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--k);color:var(--w);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.7;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;line-height:1.1;letter-spacing:-.03em}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+/* GRADIENT TEXT */
+.gt{background:linear-gradient(135deg,var(--a),var(--a2),var(--a3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:16px 52px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid transparent;
+  transition:background .4s,border-color .4s;
+  /* sem backdrop-filter para evitar tremido em iOS */
+}
+nav.sc{background:rgba(7,7,7,.97);border-bottom-color:var(--b)}
+.logo{font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.5px}
+.logo em{color:var(--a);font-style:normal}
+.nl{display:flex;gap:32px}
+.nl a{font-size:13.5px;color:var(--w3);transition:color .2s}
+.nl a:hover{color:var(--w)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 24px;border-radius:8px;
+  font-family:'Outfit',sans-serif;font-weight:600;font-size:13.5px;
+  cursor:pointer;transition:opacity .2s,transform .2s;border:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.bp{background:linear-gradient(135deg,var(--a),var(--a2),var(--a3));color:#fff}
+.bp:hover{opacity:.85;transform:translateY(-1px)}
+.bo{background:transparent;color:var(--w);border:1px solid var(--b2)}
+.bo:hover{border-color:var(--a);color:var(--a)}
+.blg{padding:14px 32px;font-size:15px}
+/* HERO — sem position:fixed internos que causam tremido */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:140px 48px 90px;
+  position:relative;overflow:hidden;
+}
+/* Orbs via CSS puro sem JS animation para não interferir no scroll */
+.hero::before{
+  content:'';position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(183,148,244,.09) 0%,transparent 65%);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;will-change:auto;
+}
+.hero::after{
+  content:'';position:absolute;
+  width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(237,130,180,.06) 0%,transparent 65%);
+  top:20%;right:8%;pointer-events:none;will-change:auto;
+}
+.hline{
+  width:1px;height:56px;
+  background:linear-gradient(to bottom,transparent,var(--a),transparent);
+  margin:0 auto 36px;opacity:.7;
+}
+.ey{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:6px 16px;border-radius:100px;
+  border:1px solid rgba(183,148,244,.25);background:rgba(183,148,244,.07);
+  font-size:11px;font-weight:500;color:var(--a);
+  letter-spacing:2.5px;text-transform:uppercase;margin-bottom:32px;
+}
+.pd{width:6px;height:6px;border-radius:50%;background:var(--a);animation:apd 2s infinite}
+@keyframes apd{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{
+  font-size:clamp(42px,8vw,96px);font-weight:800;
+  letter-spacing:-.04em;line-height:1.02;
+  max-width:860px;margin-bottom:26px;
+}
+.hsub{
+  font-size:17px;color:var(--w2);max-width:500px;
+  margin:0 auto 48px;font-weight:300;line-height:1.8;
+}
+.hctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hstats{
+  display:flex;gap:52px;
+  margin-top:76px;padding-top:44px;
+  border-top:1px solid var(--b);
+}
+.stat{text-align:center}
+.sn{font-family:'Outfit',sans-serif;font-size:40px;font-weight:800;line-height:1}
+.sl{font-size:12px;color:var(--w3);margin-top:5px;max-width:130px}
+/* SECTIONS */
+section{padding:100px 52px}
+.stag{
+  font-size:10.5px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--a);font-weight:600;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.stag::before{content:'';width:20px;height:1px;background:var(--a)}
+.stit{font-size:clamp(30px,4.5vw,54px);font-weight:800;line-height:1.08;margin-bottom:18px}
+.ssub{font-size:16.5px;color:var(--w2);font-weight:300;line-height:1.8;max-width:520px}
+/* PROBLEM */
+.pbg{background:var(--d1)}
+.pgrid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;margin-top:64px;
+  background:var(--b);border:1px solid var(--b);
+  border-radius:14px;overflow:hidden;
+}
+.pc2{background:var(--d2);padding:40px 34px;position:relative;transition:background .3s}
+.pc2::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--a),transparent);
+  opacity:0;transition:opacity .4s;
+}
+.pc2:hover{background:var(--d3)}
+.pc2:hover::before{opacity:1}
+.ibox{
+  width:48px;height:48px;border-radius:11px;
+  border:1px solid var(--b2);background:var(--d3);
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.ibox svg{width:20px;height:20px;stroke:var(--a);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.pc2 h3{font-size:18px;margin-bottom:11px}
+.pc2 p{font-size:14px;color:var(--w2);line-height:1.75}
+/* DIFF */
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.ncard{
+  background:var(--d2);border:1px solid var(--b);
+  border-radius:18px;padding:44px;
+  position:relative;overflow:hidden;
+}
+.ncard::after{
+  content:'';position:absolute;bottom:-70px;right:-70px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(183,148,244,.08) 0%,transparent 70%);
+}
+.nicon{
+  width:52px;height:52px;border-radius:12px;
+  background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);
+  display:flex;align-items:center;justify-content:center;margin-bottom:24px;
+}
+.nicon svg{width:22px;height:22px;stroke:var(--g);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ncard h3{font-size:23px;margin-bottom:16px}
+.ncard p{font-size:14.5px;color:var(--w2);line-height:1.8;margin-bottom:12px}
+.nauthor{margin-top:26px;padding-top:24px;border-top:1px solid var(--b);display:flex;align-items:center;gap:13px}
+.aav{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--a),var(--a3));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:#fff;flex-shrink:0;
+}
+.aname{font-size:14px;font-weight:600}
+.atit{font-size:11px;color:var(--w3);margin-top:2px}
+.prns{display:flex;flex-direction:column;gap:20px}
+.prn{display:flex;gap:14px;align-items:flex-start}
+.pidx{
+  width:26px;height:26px;border-radius:50%;
+  border:1px solid var(--b2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:600;color:var(--a);flex-shrink:0;
+  font-family:'Outfit',sans-serif;
+}
+.prn h4{font-size:14.5px;font-weight:600;margin-bottom:4px}
+.prn p{font-size:13px;color:var(--w3);line-height:1.65}
+/* SERVICES */
+.svbg{background:var(--d1)}
+.svgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+.svc{
+  background:var(--d2);border:1px solid var(--b);
+  border-radius:16px;padding:36px 32px 32px;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.svc:hover{transform:translateY(-4px);border-color:rgba(183,148,244,.28);box-shadow:0 18px 52px rgba(0,0,0,.4)}
+.svc.ft{border-color:rgba(183,148,244,.3);background:linear-gradient(155deg,#14112a,#141414)}
+.svc.ft::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--a2),var(--a3))}
+.sbdg{position:absolute;top:16px;right:16px;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:.5px}
+.sbp{background:rgba(183,148,244,.12);color:var(--a);border:1px solid rgba(183,148,244,.25)}
+.sbn{background:rgba(237,130,180,.12);color:var(--a3);border:1px solid rgba(237,130,180,.25)}
+.sic{width:46px;height:46px;border-radius:10px;border:1px solid var(--b2);background:var(--d3);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.sic svg{width:19px;height:19px;stroke:var(--a);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:19px;margin-bottom:10px}
+.svc>p{font-size:13.5px;color:var(--w2);line-height:1.75;margin-bottom:24px;flex:1}
+.sfts{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.sfts li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w2)}
+.sfts li svg{width:13px;height:13px;stroke:var(--a);fill:none;stroke-width:2.5;flex-shrink:0}
+.spr{margin-bottom:22px}
+.pw{font-size:12px;color:var(--w3);text-decoration:line-through;margin-bottom:3px}
+.pnow{font-family:'Outfit',sans-serif;font-size:34px;font-weight:800;line-height:1}
+.psave{display:inline-block;margin-top:5px;padding:2px 9px;border-radius:100px;font-size:10.5px;font-weight:600;background:rgba(183,148,244,.1);color:var(--a);border:1px solid rgba(183,148,244,.2)}
+.pnote{font-size:11px;color:var(--w3);margin-top:4px}
+/* COMBO */
+.combo{
+  margin-top:16px;background:var(--d2);
+  border:1px solid rgba(183,148,244,.25);border-radius:16px;
+  padding:36px 42px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;
+}
+.combo::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--a),var(--a3),transparent)}
+.ctag{display:inline-flex;align-items:center;gap:7px;padding:4px 12px;border-radius:100px;background:rgba(183,148,244,.1);border:1px solid rgba(183,148,244,.2);font-size:10px;font-weight:600;color:var(--a);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.combo h3{font-size:22px;margin-bottom:7px}
+.cdesc{font-size:13.5px;color:var(--w2);max-width:460px}
+.cpb{flex-shrink:0;text-align:right}
+.cw{font-size:13px;color:var(--w3);text-decoration:line-through;margin-bottom:3px}
+.cnow{font-family:'Outfit',sans-serif;font-size:44px;font-weight:800;line-height:1}
+.csave{display:inline-block;margin-top:6px;padding:3px 12px;border-radius:100px;font-size:11px;font-weight:600;background:rgba(183,148,244,.1);color:var(--a);border:1px solid rgba(183,148,244,.2)}
+/* BIO */
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+.bioc{background:var(--d2);border:1px solid var(--b);border-radius:16px;overflow:hidden;transition:border-color .25s,transform .25s}
+.bioc:hover{border-color:rgba(183,148,244,.3);transform:translateY(-3px)}
+.bioh{padding:20px 20px 16px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:12px}
+.bav{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--a3));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:17px;color:#fff;flex-shrink:0}
+.bhandle{font-size:13.5px;font-weight:600;margin-bottom:2px}
+.bniche{font-size:11px;color:var(--w3)}
+.biob{padding:20px}
+.btx{font-size:13px;color:var(--w2);line-height:1.8;margin-bottom:14px}
+.btgs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:13px}
+.btg{padding:2px 10px;border-radius:100px;font-size:10px;font-weight:500;background:rgba(183,148,244,.08);border:1px solid rgba(183,148,244,.18);color:var(--a)}
+.bnote{font-size:11.5px;color:var(--w3);display:flex;align-items:center;gap:7px;padding-top:13px;border-top:1px solid var(--b)}
+.bnote svg{width:12px;height:12px;stroke:var(--a);fill:none;stroke-width:2;flex-shrink:0}
+/* PORTFOLIO */
+.ptbg{background:var(--d1)}
+.ptgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:64px}
+.ptc{border-radius:14px;overflow:hidden;border:1px solid var(--b);position:relative;aspect-ratio:16/10;background:var(--d3);display:block;transition:border-color .25s,box-shadow .25s}
+.ptc:hover{border-color:rgba(183,148,244,.35);box-shadow:0 14px 44px rgba(0,0,0,.5)}
+.ptc:hover .pov{opacity:1}
+.ptc:hover .ptimg{transform:scale(1.04)}
+.ptimg{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.pph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;padding:22px}
+.pphi{width:46px;height:46px;border-radius:10px;border:1px solid var(--b2);display:flex;align-items:center;justify-content:center}
+.pphi svg{width:19px;height:19px;stroke:var(--w3);fill:none;stroke-width:1.5}
+.pph h4{font-size:14.5px;color:var(--w2)}
+.pph p{font-size:11px;color:var(--w3);text-align:center}
+.pov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,7,.95) 0%,rgba(7,7,7,.4) 60%,transparent 100%);opacity:.7;transition:opacity .3s;display:flex;align-items:flex-end;padding:22px}
+.pi h4{font-size:16px;margin-bottom:4px}
+.pi p{font-size:12.5px;color:var(--w2)}
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+.tc{background:var(--d2);border:1px solid var(--b);border-radius:16px;padding:30px}
+.tres{height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;border:1px dashed var(--b2);border-radius:10px;color:var(--w3);font-size:12.5px;text-align:center}
+/* PROCESS */
+.prbg{background:var(--d1)}
+.prgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;background:var(--b);border:1px solid var(--b);border-radius:14px;overflow:hidden}
+.prst{background:var(--d2);padding:38px 30px;transition:background .3s}
+.prst:hover{background:var(--d3)}
+.prnum{font-family:'Outfit',sans-serif;font-size:64px;font-weight:800;line-height:1;opacity:.05;margin-bottom:14px}
+.pric{width:40px;height:40px;border-radius:9px;border:1px solid var(--b2);background:var(--d3);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.pric svg{width:16px;height:16px;stroke:var(--a);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.prst h3{font-size:15.5px;margin-bottom:9px}
+.prst p{font-size:13px;color:var(--w3);line-height:1.7}
+/* FAQ */
+.fwrap{max-width:720px;margin:0 auto}
+.flist{margin-top:56px;display:flex;flex-direction:column;gap:2px}
+.fi{background:var(--d2);border:1px solid var(--b);border-radius:10px;overflow:hidden;transition:border-color .2s}
+.fi.open{border-color:rgba(183,148,244,.22)}
+.fq{padding:19px 22px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;gap:14px;transition:color .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.fq:hover{color:var(--a)}
+.farr{width:26px;height:26px;flex-shrink:0;border-radius:50%;border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.farr svg{width:11px;height:11px;stroke:var(--w);fill:none;stroke-width:2.5;transition:transform .3s}
+.fi.open .farr{background:var(--a);border-color:var(--a)}
+.fi.open .farr svg{transform:rotate(180deg);stroke:#fff}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.fai{padding:0 22px 18px;font-size:14px;color:var(--w2);line-height:1.8}
+/* CONTACT */
+.ctbg{background:var(--d1)}
+.ctwrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.cfc{background:var(--d2);border:1px solid var(--b);border-radius:18px;padding:40px 36px}
+.fg{margin-bottom:15px}
+.fl{display:block;font-size:12px;font-weight:500;color:var(--w2);margin-bottom:6px;letter-spacing:.3px}
+.fc{width:100%;background:var(--d3);border:1px solid var(--b);border-radius:8px;padding:12px 14px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;appearance:none}
+.fc:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(183,148,244,.1)}
+select.fc{cursor:pointer}
+select.fc option{background:var(--d2)}
+textarea.fc{resize:vertical;min-height:96px}
+.fbtn{width:100%;padding:13px;background:linear-gradient(135deg,var(--a),var(--a2),var(--a3));color:#fff;border:none;border-radius:8px;font-family:'Outfit',sans-serif;font-weight:700;font-size:14.5px;cursor:pointer;transition:opacity .2s,transform .2s;margin-top:4px;-webkit-tap-highlight-color:transparent}
+.fbtn:hover{opacity:.87;transform:translateY(-1px)}
+.smsg{display:none;margin-top:13px;padding:12px 15px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.25);border-radius:8px;color:#4ade80;font-size:13.5px;text-align:center}
+.pbox{background:var(--d2);border:1px solid var(--b);border-radius:14px;padding:26px;margin-bottom:24px}
+.pbox h4{font-size:16px;margin-bottom:14px}
+.plist{display:flex;flex-direction:column;gap:11px}
+.pit{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--w2)}
+.pck{width:20px;height:20px;border-radius:50%;flex-shrink:0;background:rgba(183,148,244,.1);border:1px solid rgba(183,148,244,.25);display:flex;align-items:center;justify-content:center}
+.pck svg{width:9px;height:9px;stroke:var(--a);fill:none;stroke-width:3}
+.chlinks{display:flex;flex-direction:column;gap:11px}
+.ch{display:flex;align-items:center;gap:13px;padding:15px 18px;background:var(--d2);border:1px solid var(--b);border-radius:10px;color:var(--w);transition:border-color .2s,transform .2s;-webkit-tap-highlight-color:transparent}
+.ch:hover{border-color:rgba(183,148,244,.3);transform:translateX(4px)}
+.chi{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chwa{background:rgba(37,211,102,.15)}
+.chwa svg{width:18px;height:18px;fill:#25d366}
+.chem{background:rgba(183,148,244,.12)}
+.chem svg{width:18px;height:18px;fill:none;stroke:var(--a);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ch h4{font-size:13.5px;font-weight:600;margin-bottom:2px}
+.ch p{font-size:11.5px;color:var(--w3)}
+/* CTA FINAL */
+.ctas{background:var(--k);text-align:center;padding:112px 52px;position:relative;overflow:hidden}
+.ctas::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:380px;background:radial-gradient(ellipse,rgba(183,148,244,.07) 0%,transparent 65%);pointer-events:none}
+.ctas h2{font-size:clamp(32px,6vw,68px);font-weight:800;margin-bottom:22px}
+.ctas p{font-size:16.5px;color:var(--w2);max-width:440px;margin:0 auto 44px;font-weight:300}
+/* FOOTER */
+footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.flogo{font-family:'Outfit',sans-serif;font-weight:800;font-size:18px}
+.flogo em{color:var(--a);font-style:normal}
+.fcopy{font-size:11.5px;color:var(--w3);margin-top:3px}
+.flinks{display:flex;gap:26px}
+.flinks a{font-size:12.5px;color:var(--w3);transition:color .2s}
+.flinks a:hover{color:var(--w)}
+/* WHATSAPP — sem animation de float para não interferir no scroll iOS */
+.waf{position:fixed;bottom:24px;right:24px;z-index:200;display:flex;align-items:center;gap:10px}
+.walabel{background:var(--d2);border:1px solid var(--b2);border-radius:7px;padding:7px 12px;font-size:12px;font-weight:500;white-space:nowrap;opacity:0;transform:translateX(8px);transition:opacity .3s,transform .3s;pointer-events:none}
+.waf:hover .walabel{opacity:1;transform:translateX(0)}
+.wabtn{width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.wabtn:hover{transform:scale(1.08);box-shadow:0 8px 30px rgba(37,211,102,.4)}
+.wabtn:active{transform:scale(.96)}
+.wabtn svg{width:24px;height:24px;fill:#fff}
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav{padding:15px 20px}
+  .nl{display:none}
+  section{padding:72px 20px}
+  .hero{padding:110px 20px 70px}
+  .hstats{gap:24px}
+  .dgrid,.ctwrap{grid-template-columns:1fr;gap:32px}
+  .pgrid,.svgrid,.bgrid,.ptgrid,.tgrid,.prgrid{grid-template-columns:1fr}
+  .combo{flex-direction:column;text-align:center}
+  .cpb{text-align:center}
+  footer{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+  .hstats{flex-direction:column;gap:22px;align-items:center}
+  .cfc{padding:24px 16px}
+  .combo{padding:28px 22px}
+  .hero h1{letter-spacing:-.03em}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo">RNV<em>360</em></div>
+  <div class="nl">
+    <a href="#servicos">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#processo">Como funciona</a>
+    <a href="#contato">Contato</a>
+  </div>
+  <a href="https://wa.me/5511970866486?text=Olá!%20Vim%20pelo%20site%20da%20RNV360." class="btn bp" target="_blank" rel="noopener">Falar agora</a>
+</nav>
+
+<section class="hero">
+  <div class="hline"></div>
+  <div class="ey rv"><div class="pd"></div>Neurociência aplicada ao design digital</div>
+  <h1 class="rv d1">Seu cliente decide em<br/><span class="gt">8 segundos.</span><br/>A gente garante que<br/>ele decida por você.</h1>
+  <p class="hsub rv d2">Criamos sites e landing pages com base em como o cérebro humano processa confiança, toma decisões e age. Não é só design bonito. É psicologia de conversão aplicada.</p>
+  <div class="hctas rv d3">
+    <a href="#contato" class="btn bp blg">Quero meu site profissional</a>
+    <a href="#portfolio" class="btn bo blg">Ver portfólio</a>
+  </div>
+  <div class="hstats rv d4">
+    <div class="stat"><div class="sn"><span class="cnt" data-t="8">0</span>s</div><div class="sl">Tempo médio para o cérebro julgar um site</div></div>
+    <div class="stat"><div class="sn"><span class="cnt" data-t="94">0</span>%</div><div class="sl">Das primeiras impressões baseadas no design</div></div>
+    <div class="stat"><div class="sn"><span class="cnt" data-t="100">0</span>%</div><div class="sl">Dos projetos entregues dentro do prazo</div></div>
+  </div>
+</section>
+
+<section class="pbg">
+  <div style="text-align:center">
+    <div class="stag rv" style="justify-content:center">O problema</div>
+    <h2 class="stit rv d1">Enquanto você espera,<br/>seus concorrentes <span class="gt">vendem</span></h2>
+  </div>
+  <div class="pgrid">
+    <div class="pc2 rv">
+      <div class="ibox"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+      <h3>Invisibilidade digital</h3>
+      <p>Cada dia sem presença profissional é um dia que seus concorrentes conquistam os clientes que deveriam ser seus. O Google não perdoa sites amadores.</p>
+    </div>
+    <div class="pc2 rv d1">
+      <div class="ibox"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+      <h3>O cérebro decide em milissegundos</h3>
+      <p>A neurociência mostra que o sistema límbico avalia ameaças antes da razão agir. Um site sem autoridade visual é rejeitado antes de ser lido.</p>
+    </div>
+    <div class="pc2 rv d2">
+      <div class="ibox"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <h3>Investimento sem retorno</h3>
+      <p>Sem estrutura de conversão, cada real em tráfego escoa sem resultado. Você investe, o concorrente colhe.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="dgrid">
+    <div>
+      <div class="stag rv">Nosso diferencial</div>
+      <h2 class="stit rv d1">Design com<br/><span class="gt">neurociência dentro</span></h2>
+      <p class="ssub rv d2">A maioria cria sites bonitos. A gente cria sites que fazem o seu cliente sentir confiança, tomar uma decisão e agir — tudo isso antes mesmo de ele perceber.</p>
+      <div class="prns" style="margin-top:36px">
+        <div class="prn rv d1"><div class="pidx">01</div><div><h4>O olhar do seu cliente é guiado</h4><p>Organizamos cada parte da página para que a pessoa veja o que importa, na ordem certa, sem se perder ou sair sem fazer nada.</p></div></div>
+        <div class="prn rv d2"><div class="pidx">02</div><div><h4>Seu site transmite confiança automática</h4><p>O cérebro decide se confia em algo em menos de um segundo. Cada cor, fonte e imagem foi escolhida para passar credibilidade antes de qualquer texto ser lido.</p></div></div>
+        <div class="prn rv d3"><div class="pidx">03</div><div><h4>O texto convence sem parecer que está convencendo</h4><p>Usamos técnicas de psicologia aplicada para escrever textos que fazem a pessoa sentir que a decisão de comprar foi dela — porque foi.</p></div></div>
+      </div>
+    </div>
+    <div class="ncard rv d2">
+      <div class="nicon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a2.5 2.5 0 1 1 0 5H9a7 7 0 0 0 0 14h6a7 7 0 0 0 0-14h-.5a2.5 2.5 0 1 1 0-5"/><path d="M12 12v4"/><path d="M10 14h4"/></svg></div>
+      <h3>O diferencial científico da RNV360</h3>
+      <p>Fundada por Aline França, especialista com MBA em Neurociência, Consumo e Marketing. Cada elemento do seu site é pensado com base em como o cérebro humano processa confiança e toma decisões de compra.</p>
+      <p>Não é só design. É ciência aplicada para fazer seu cliente dizer sim.</p>
+      <div class="nauthor">
+        <img src="images/aline.png" alt="Aline França" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;border:2px solid rgba(183,148,244,.3)"/>
+        <div><div class="aname">Aline França</div><div class="atit">MBA Neurociência, Consumo e Marketing</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svbg" id="servicos">
+  <div style="text-align:center">
+    <div class="stag rv" style="justify-content:center">Serviços</div>
+    <h2 class="stit rv d1">Soluções que <span class="gt">geram resultado</span></h2>
+    <p class="ssub rv d2" style="margin:0 auto">Sites profissionais, landing pages de alta conversão e bio para influenciadores. Cada serviço pensado para a sua etapa digital.</p>
+  </div>
+  <div class="svgrid">
+    <div class="svc rv">
+      <div class="sbdg sbn">Novo</div>
+      <div class="sic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg></div>
+      <h3>Bio Site</h3>
+      <p>Uma página completa de apresentação para colocar no link da sua bio. Muito além do Linktree — com sua foto, sua história, seus links e sua identidade visual. Tudo em um subdomínio próprio.</p>
+      <ul class="sfts">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Foto hero de impacto com frase de posicionamento</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Apresentação pessoal com seções expansíveis</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Botões de link para produtos, serviços e redes</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Design exclusivo com sua identidade visual</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Subdomínio próprio configurado e publicado</li>
+      </ul>
+      <div class="spr"><div class="pw">De R$ 297</div><div class="pnow">R$ 197</div><div class="psave">Você economiza R$ 100</div><div class="pnote">Entrega em 3 a 5 dias úteis</div></div>
+      <a href="https://wa.me/5511970866486?text=Olá!%20Tenho%20interesse%20no%20Bio%20Site%20da%20RNV360." target="_blank" rel="noopener" class="btn bo" style="width:100%;justify-content:center">Quero meu bio site</a>
+    </div>
+    <div class="svc ft rv d1">
+      <div class="sbdg sbp">Mais vendido</div>
+      <div class="sic"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <h3>Landing Page de Alta Conversão</h3>
+      <p>Página única construída com neurociência aplicada. Copy estratégica, design premium e estrutura validada para transformar visitantes em clientes reais.</p>
+      <ul class="sfts">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Design premium responsivo e mobile-first</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Copy com neuromarketing e ancoragem</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Integração WhatsApp e formulário</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>SEO técnico on-page completo</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Carregamento ultra rápido</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Suporte pós-entrega incluso</li>
+      </ul>
+      <div class="spr"><div class="pw">De R$ 1.197</div><div class="pnow">R$ 797</div><div class="psave">Você economiza R$ 400</div><div class="pnote">Parcelável em até 6x</div></div>
+      <a href="https://wa.me/5511970866486?text=Olá!%20Tenho%20interesse%20na%20Landing%20Page%20da%20RNV360." target="_blank" rel="noopener" class="btn bp" style="width:100%;justify-content:center">Quero minha landing page</a>
+    </div>
+    <div class="svc rv d2">
+      <div class="sic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <h3>Site Completo Profissional</h3>
+      <p>Site institucional multi-páginas com identidade visual sólida, SEO completo e estrutura que posiciona sua marca como referência no mercado.</p>
+      <ul class="sfts">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Múltiplas páginas personalizadas</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>SEO técnico para ranqueamento no Google</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Manutenção e ajustes inclusos nos primeiros 30 dias</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Design sob medida para seu nicho</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Mobile-first e performance otimizada</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Suporte pós-entrega por 30 dias</li>
+      </ul>
+      <div class="spr"><div class="pw">De R$ 2.197</div><div class="pnow">R$ 1.697</div><div class="psave">Você economiza R$ 500</div><div class="pnote">Parcelável em até 12x</div></div>
+      <a href="https://wa.me/5511970866486?text=Olá!%20Tenho%20interesse%20no%20Site%20Completo%20da%20RNV360." target="_blank" rel="noopener" class="btn bo" style="width:100%;justify-content:center">Quero meu site completo</a>
+    </div>
+  </div>
+  <div class="combo rv">
+    <div>
+      <div class="ctag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Oferta especial</div>
+      <h3>Pacote Bio + Landing Page</h3>
+      <p class="cdesc">Bio Site (R$ 197) + Landing Page (R$ 797) = R$ 994 separados. No pacote você paga R$ 847 e economiza R$ 147. Ideal para quem quer presença digital completa: um bio site para as redes sociais e uma landing page para converter clientes.</p>
+    </div>
+    <div class="cpb">
+      <div class="cw">Separado: R$ 994</div>
+      <div class="cnow gt">R$ 847</div>
+      <div class="csave">Você economiza R$ 147</div>
+      <a href="https://wa.me/5511970866486?text=Olá!%20Tenho%20interesse%20no%20Pacote%20Bio%20+%20Landing%20Page%20da%20RNV360." target="_blank" rel="noopener" class="btn bp" style="margin-top:16px;display:inline-flex">Quero o pacote completo</a>
+    </div>
+  </div>
+</section>
+
+<section id="bio">
+  <div style="text-align:center">
+    <div class="stag rv" style="justify-content:center">Bio Site</div>
+    <h2 class="stit rv d1">Exemplos de bio sites que <span class="gt">impressionam</span></h2>
+    <p class="ssub rv d2" style="margin:0 auto">Uma página completa de apresentação no seu link da bio. Veja como cada nicho pode ter uma identidade única e profissional.</p>
+  </div>
+  <div class="bgrid">
+
+    <!-- Modelo 1: Escuro/premium -->
+    <div class="bioc rv">
+      <div style="background:#1a0a0a;border-radius:12px 12px 0 0;overflow:hidden;aspect-ratio:9/16;position:relative;max-height:340px">
+        <div style="width:100%;height:55%;position:relative;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Bio site exemplo dark premium" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.7)"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,#1a0a0a 0%,transparent 60%)"></div>
+          <p style="position:absolute;bottom:10px;right:10px;font-size:8px;color:rgba(255,255,255,.9);text-align:right;line-height:1.4;font-family:'Outfit',sans-serif;font-weight:600">EU ENTENDO O QUE<br/>VOCÊ SENTE.<br/>PORQUE EU JÁ SENTI.</p>
+        </div>
+        <div style="padding:12px">
+          <p style="font-size:7.5px;color:#c9a84c;font-weight:700;letter-spacing:1px;margin-bottom:6px;font-family:'Outfit',sans-serif">SOBRE MIM</p>
+          <p style="font-size:7px;color:rgba(240,237,232,.7);line-height:1.5;margin-bottom:10px">Especialista em neurociência e comportamento humano. Traduzo a ciência em linguagem real.</p>
+          <div style="background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:20px;padding:7px 12px;text-align:center;margin-bottom:6px">
+            <p style="font-size:7px;color:#c9a84c;font-weight:600;letter-spacing:1px">CONHECER O MÉTODO</p>
+          </div>
+          <div style="display:flex;justify-content:center;gap:10px;margin-top:8px">
+            <div style="width:18px;height:18px;border:1px solid rgba(201,168,76,.4);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div>
+            <div style="width:18px;height:18px;border:1px solid rgba(201,168,76,.4);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#c9a84c" stroke="none"/></svg></div>
+            <div style="width:18px;height:18px;border:1px solid rgba(201,168,76,.4);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.04-8.56a8.16 8.16 0 0 0 4.76 1.52V4.82a4.85 4.85 0 0 1-2.95-.13z"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="biob">
+        <p style="font-size:12.5px;font-weight:600;margin-bottom:6px;font-family:'Outfit',sans-serif">Estilo Dark Premium</p>
+        <p class="btx">Fundo escuro, tipografia em dourado, foto de impacto. Ideal para coaches, especialistas e criadores com posicionamento premium.</p>
+        <div class="btgs"><span class="btg">Dark luxury</span><span class="btg">Coach / Especialista</span></div>
+        <div class="bnote"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Design criado do zero com sua identidade visual</div>
+      </div>
+    </div>
+
+    <!-- Modelo 2: Claro/natural -->
+    <div class="bioc rv d1">
+      <div style="background:#faf8f5;border-radius:12px 12px 0 0;overflow:hidden;aspect-ratio:9/16;max-height:340px">
+        <div style="width:100%;height:52%;position:relative;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Bio site exemplo clean natural" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.85) saturate(.9)"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,#faf8f5 0%,transparent 55%)"></div>
+          <p style="position:absolute;bottom:10px;left:12px;font-size:9px;color:#2d1f0e;line-height:1.4;font-family:'Outfit',sans-serif;font-weight:700">NUTRIÇÃO SEM<br/>CULPA E SEM<br/>SOFRIMENTO.</p>
+        </div>
+        <div style="padding:12px">
+          <p style="font-size:7.5px;color:#8b6914;font-weight:700;letter-spacing:1px;margin-bottom:6px;font-family:'Outfit',sans-serif">SOBRE MIM</p>
+          <p style="font-size:7px;color:#5a4020;line-height:1.5;margin-bottom:10px">Nutricionista clínica. Ajudo mulheres a emagrecer sem abandonar a vida social.</p>
+          <div style="background:#2d6a2d;border-radius:20px;padding:7px 12px;text-align:center;margin-bottom:6px">
+            <p style="font-size:7px;color:#fff;font-weight:600;letter-spacing:1px">AGENDAR CONSULTA</p>
+          </div>
+          <div style="border:1px solid #ddd;border-radius:20px;padding:6px 12px;text-align:center;margin-bottom:8px">
+            <p style="font-size:7px;color:#5a4020;font-weight:600;letter-spacing:1px">GUIA GRATUITO</p>
+          </div>
+          <div style="display:flex;justify-content:center;gap:10px;margin-top:6px">
+            <div style="width:18px;height:18px;border:1px solid #ddd;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#8b6914" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div>
+            <div style="width:18px;height:18px;border:1px solid #ddd;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#8b6914" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#8b6914" stroke="none"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="biob">
+        <p style="font-size:12.5px;font-weight:600;margin-bottom:6px;font-family:'Outfit',sans-serif">Estilo Clean & Natural</p>
+        <p class="btx">Fundo claro, tons terrosos, layout arejado. Ideal para nutricionistas, terapeutas e profissionais de saúde e bem-estar.</p>
+        <div class="btgs"><span class="btg">Clean / Natural</span><span class="btg">Saúde / Bem-estar</span></div>
+        <div class="bnote"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cores e estilo adaptados ao seu nicho</div>
+      </div>
+    </div>
+
+    <!-- Modelo 3: Escuro tech/negócios (homem) -->
+    <div class="bioc rv d2">
+      <div style="background:#0a0f1a;border-radius:12px 12px 0 0;overflow:hidden;aspect-ratio:9/16;max-height:340px">
+        <div style="width:100%;height:52%;position:relative;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Bio site exemplo tech negócios" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.6) saturate(.7)"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,#0a0f1a 0%,transparent 55%)"></div>
+          <p style="position:absolute;bottom:10px;left:12px;font-size:9px;color:#fff;line-height:1.4;font-family:'Outfit',sans-serif;font-weight:700">DO ZERO AO<br/>PRIMEIRO<br/><span style="color:#4f8ef7">FATURAMENTO.</span></p>
+        </div>
+        <div style="padding:12px">
+          <p style="font-size:7.5px;color:#4f8ef7;font-weight:700;letter-spacing:1px;margin-bottom:6px;font-family:'Outfit',sans-serif">SOBRE MIM</p>
+          <p style="font-size:7px;color:rgba(255,255,255,.6);line-height:1.5;margin-bottom:10px">Fundador de 3 empresas. Mentor de empreendedores. Mais de 200 negócios estruturados.</p>
+          <div style="background:linear-gradient(135deg,#4f8ef7,#7c6ff7);border-radius:20px;padding:7px 12px;text-align:center;margin-bottom:6px">
+            <p style="font-size:7px;color:#fff;font-weight:600;letter-spacing:1px">MENTORIA GRATUITA</p>
+          </div>
+          <div style="border:1px solid rgba(79,142,247,.3);border-radius:20px;padding:6px 12px;text-align:center;margin-bottom:8px">
+            <p style="font-size:7px;color:#4f8ef7;font-weight:600;letter-spacing:1px">VER CONTEÚDO</p>
+          </div>
+          <div style="display:flex;justify-content:center;gap:10px;margin-top:6px">
+            <div style="width:18px;height:18px;border:1px solid rgba(79,142,247,.3);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div>
+            <div style="width:18px;height:18px;border:1px solid rgba(79,142,247,.3);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+            <div style="width:18px;height:18px;border:1px solid rgba(79,142,247,.3);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="#4f8ef7" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.04-8.56a8.16 8.16 0 0 0 4.76 1.52V4.82a4.85 4.85 0 0 1-2.95-.13z"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="biob">
+        <p style="font-size:12.5px;font-weight:600;margin-bottom:6px;font-family:'Outfit',sans-serif">Estilo Tech & Negócios</p>
+        <p class="btx">Fundo escuro azulado, destaques em azul elétrico. Ideal para empreendedores, mentores de negócios e profissionais de tecnologia.</p>
+        <div class="btgs"><span class="btg">Tech / Dark</span><span class="btg">Negócios / Mentor</span></div>
+        <div class="bnote"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cada bio site é único — criado do zero para você</div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:44px" class="rv">
+    <p style="color:var(--w3);font-size:14px;margin-bottom:22px">Cada bio site é único — criado do zero com a sua identidade visual, suas cores e seus links.</p>
+    <a href="https://wa.me/5511970866486?text=Olá!%20Quero%20meu%20Bio%20Site%20da%20RNV360." target="_blank" rel="noopener" class="btn bp blg">Quero meu bio site por R$ 197</a>
+  </div>
+</section>
+
+<section class="ptbg" id="portfolio">
+  <div style="text-align:center">
+    <div class="stag rv" style="justify-content:center">Portfólio</div>
+    <h2 class="stit rv d1">Projetos <span class="gt">entregues</span></h2>
+    <p class="ssub rv d2" style="margin:0 auto">Sites reais, criados com estratégia, neurociência e atenção a cada detalhe de conversão.</p>
+  </div>
+  <div class="ptgrid">
+    <a href="https://servuscontabil.com.br" target="_blank" rel="noopener" class="ptc rv">
+      <img class="ptimg" src="images/servus.png" alt="Servus Contábil — site criado pela RNV360"/>
+      <div class="pov"><div class="pi"><h4>Servus Contábil</h4><p>Contabilidade para igrejas — posicionamento premium com identidade de fé</p></div></div>
+    </a>
+    <a href="https://wfcont.com.br" target="_blank" rel="noopener" class="ptc rv d1">
+      <img class="ptimg" src="images/wf.png" alt="WF Consultoria Contábil — site criado pela RNV360"/>
+      <div class="pov"><div class="pi"><h4>WF Consultoria Contábil</h4><p>Site institucional com múltiplos serviços e captação de leads</p></div></div>
+    </a>
+    <a href="https://nexustaxbrasil.com.br" target="_blank" rel="noopener" class="ptc rv">
+      <img class="ptimg" src="images/nexus.png" alt="Nexus Tax Brasil — site criado pela RNV360"/>
+      <div class="pov"><div class="pi"><h4>Nexus Tax Brasil</h4><p>Consultoria tributária internacional — credibilidade e expertise global</p></div></div>
+    </a>
+    <a href="http://tactusdesign.com.br" target="_blank" rel="noopener" class="ptc rv d1">
+      <img class="ptimg" src="images/tactus.png" alt="Tactus Design — site criado pela RNV360"/>
+      <div class="pov"><div class="pi"><h4>Tactus Design</h4><p>Móveis planejados — design premium com foco em conversão</p></div></div>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:16px" class="rv">
+    <a href="https://mri.alinefranca360.com.br" target="_blank" rel="noopener" class="ptc" style="display:inline-block;width:100%;max-width:700px;border-radius:14px;overflow:hidden;border:1px solid var(--b);position:relative;aspect-ratio:16/7">
+      <img class="ptimg" src="images/mri.png" alt="MRI Método Reconexão Interna — landing page criada pela RNV360" style="width:100%;height:100%;object-fit:cover"/>
+      <div class="pov"><div class="pi"><h4>MRI — Método Reconexão Interna</h4><p>Landing page de alta conversão com neurociência aplicada e copy emocional</p></div></div>
+    </a>
+  </div>
+</section>
+
+<section>
+  <div style="text-align:center">
+    <div class="stag rv" style="justify-content:center">Depoimentos</div>
+    <h2 class="stit rv d1">O que dizem <span class="gt">nossos clientes</span></h2>
+  </div>
+  <div class="tgrid">
+    <div class="tc rv">
+      <div class="test-stars" style="display:flex;gap:3px;margin-bottom:14px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p style="font-size:14.5px;color:var(--w2);line-height:1.75;font-style:italic;margin-bottom:22px">"A Aline é super profissional, entrega super rápida. Recomendo demais!"</p>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--a3));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:#fff;flex-shrink:0">D</div>
+        <div><div style="font-size:14px;font-weight:600">David G.</div><div style="font-size:11.5px;color:var(--w3)">Cliente RNV360</div></div>
+      </div>
+    </div>
+    <div class="tc rv d1">
+      <div class="test-stars" style="display:flex;gap:3px;margin-bottom:14px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p style="font-size:14.5px;color:var(--w2);line-height:1.75;font-style:italic;margin-bottom:22px">"Amei meu site, todos elogiam quando veem. Entrega rápida e excelente atendimento."</p>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--a2),var(--a));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:#fff;flex-shrink:0">D</div>
+        <div><div style="font-size:14px;font-weight:600">Daniela B.</div><div style="font-size:11.5px;color:var(--w3)">Cliente RNV360</div></div>
+      </div>
+    </div>
+    <div class="tc rv d2">
+      <div class="test-stars" style="display:flex;gap:3px;margin-bottom:14px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p style="font-size:14.5px;color:var(--w2);line-height:1.75;font-style:italic;margin-bottom:22px">"Estou muito contente com o resultado. Em poucas semanas as vendas cresceram e muitos clientes vieram pelo site."</p>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--a3),var(--a));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:#fff;flex-shrink:0">T</div>
+        <div><div style="font-size:14px;font-weight:600">Tomaz S.</div><div style="font-size:11.5px;color:var(--w3)">Cliente RNV360</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prbg" id="processo">
+  <div style="text-align:center">
+    <div class="stag rv" style="justify-content:center">Como funciona</div>
+    <h2 class="stit rv d1">Do briefing ao ar <span class="gt">em 4 etapas</span></h2>
+  </div>
+  <div class="prgrid">
+    <div class="prst rv"><div class="prnum">01</div><div class="pric"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><h3>Briefing estratégico</h3><p>Você preenche nosso formulário. Entendemos seu negócio, público, objetivos e concorrência.</p></div>
+    <div class="prst rv d1"><div class="prnum">02</div><div class="pric"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Proposta personalizada</h3><p>Em até 24h enviamos proposta com estrutura, copy e abordagem visual pensados para o seu nicho.</p></div>
+    <div class="prst rv d2"><div class="prnum">03</div><div class="pric"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Desenvolvimento</h3><p>Após aprovação, desenvolvemos com código limpo, design premium e gatilhos de conversão aplicados.</p></div>
+    <div class="prst rv d3"><div class="prnum">04</div><div class="pric"><svg viewBox="0 0 24 24"><polyline points="22 11.08 22 12 12 22 2 12 2.5 6.5"/><polyline points="22 6 12 16 9 13"/></svg></div><h3>Entrega e suporte</h3><p>Você aprova, publicamos e o suporte pós-entrega garante que tudo funcione desde o primeiro dia.</p></div>
+  </div>
+</section>
+
+<section class="fwrap">
+  <div style="text-align:center">
+    <div class="stag rv" style="justify-content:center">Dúvidas frequentes</div>
+    <h2 class="stit rv d1">Perguntas <span class="gt">frequentes</span></h2>
+  </div>
+  <div class="flist">
+    <div class="fi rv"><div class="fq" onclick="tF(this)">Qual é o prazo de entrega?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">Bio profissional: até 48h. Landing page: 5 a 7 dias úteis. Site completo: 15 a 20 dias úteis. O prazo começa após briefing aprovado e pagamento confirmado.</div></div></div>
+    <div class="fi rv"><div class="fq" onclick="tF(this)">Como funciona o pagamento?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">50% de entrada antes do início e 50% na entrega aprovada. Aceitamos Pix e cartão de crédito parcelado. Antes de qualquer pagamento você recebe uma proposta detalhada com tudo que será entregue.</div></div></div>
+    <div class="fi rv"><div class="fq" onclick="tF(this)">Preciso fornecer textos e fotos?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">Não. A copy fazemos para você como parte do serviço. Para fotos, usamos imagens profissionais licenciadas se você não tiver. Você só precisa nos contar sobre seu negócio.</div></div></div>
+    <div class="fi rv"><div class="fq" onclick="tF(this)">E se eu não gostar do resultado?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">O processo inclui revisões. Você aprova a estrutura antes do desenvolvimento e o design antes de publicarmos. Trabalhamos com transparência total para garantir que o resultado seja o que você esperava.</div></div></div>
+    <div class="fi rv"><div class="fq" onclick="tF(this)">Inclui hospedagem e domínio?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">Domínio e hospedagem são contratados por você para que tenha controle total sem depender de terceiros. Indicamos parceiros com preços acessíveis e auxiliamos toda a configuração sem custo adicional.</div></div></div>
+    <div class="fi rv"><div class="fq" onclick="tF(this)">Quando começo a ver resultados?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">Com tráfego pago pode ser nas primeiras semanas. Com SEO orgânico, de 3 a 6 meses. O que garantimos é que a estrutura do site está preparada para converter todo tráfego que chegar.</div></div></div>
+  </div>
+</section>
+
+<section class="ctbg" id="contato">
+  <div class="ctwrap">
+    <div>
+      <div class="stag rv">Fale conosco</div>
+      <h2 class="stit rv d1">Vamos começar<br/><span class="gt">seu projeto?</span></h2>
+      <p class="ssub rv d2" style="margin-bottom:36px">Preencha o briefing ao lado. Respondemos em até 2h durante o horário comercial com uma proposta personalizada.</p>
+      <div class="pbox rv d2">
+        <h4>O que acontece depois?</h4>
+        <div class="plist">
+          <div class="pit"><div class="pck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Retorno em até 2h durante horário comercial</div>
+          <div class="pit"><div class="pck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Conversa rápida para entender seu negócio</div>
+          <div class="pit"><div class="pck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Proposta detalhada sem compromisso</div>
+          <div class="pit"><div class="pck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Sem pressão. Sem spam. Sem surpresas.</div>
+        </div>
+      </div>
+      <div class="chlinks rv d3">
+        <a href="https://wa.me/5511970866486?text=Olá!%20Vim%20pelo%20site%20da%20RNV360." target="_blank" rel="noopener" class="ch">
+          <div class="chi chwa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+          <div><h4>WhatsApp</h4><p>Resposta rápida • (11) 97086-6486</p></div>
+        </a>
+        <a href="mailto:contato@rnv360.com.br" class="ch">
+          <div class="chi chem"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><h4>E-mail</h4><p>contato@rnv360.com.br</p></div>
+        </a>
+      </div>
+    </div>
+    <div class="cfc rv d2">
+      <h3 style="font-size:20px;margin-bottom:7px">Briefing rápido</h3>
+      <p style="font-size:13px;color:var(--w3);margin-bottom:20px">Clique abaixo, preencha em menos de 2 minutos e receba uma proposta personalizada.</p>
+
+      <button onclick="toggleBriefing()" id="briefing-toggle" class="fbtn" style="margin-bottom:0;display:flex;align-items:center;justify-content:center;gap:10px">
+        <svg id="briefing-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        Preencher briefing
+      </button>
+
+      <div id="briefing-form" style="max-height:0;overflow:hidden;transition:max-height .5s ease,opacity .4s ease;opacity:0">
+        <form onsubmit="sF(event)" style="margin-top:20px">
+          <div class="fg"><label class="fl" for="fn">Seu nome</label><input type="text" id="fn" class="fc" placeholder="Como podemos te chamar?" required autocomplete="name"/></div>
+          <div class="fg"><label class="fl" for="fp">WhatsApp</label><input type="tel" id="fp" class="fc" placeholder="(11) 99999-9999" required autocomplete="tel"/></div>
+          <div class="fg"><label class="fl" for="fb">Tipo de negócio</label><input type="text" id="fb" class="fc" placeholder="Ex: Coach, nutricionista, loja, escritório..." required/></div>
+          <div class="fg"><label class="fl" for="fs">Qual serviço tem interesse?</label>
+            <select id="fs" class="fc" required>
+              <option value="" disabled selected>Selecione...</option>
+              <option>Bio Site — R$ 197</option>
+              <option>Landing Page — R$ 797</option>
+              <option>Site Completo — R$ 1.697</option>
+              <option>Pacote Bio Site + Landing Page — R$ 847</option>
+              <option>Ainda não sei, quero conversar</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fl" for="fm">Conte sobre o projeto</label><textarea id="fm" class="fc" placeholder="O que você vende? Para quem? O que espera do site?"></textarea></div>
+          <button type="submit" class="fbtn">Enviar pelo WhatsApp →</button>
+          <p style="font-size:11px;color:var(--w3);text-align:center;margin-top:10px">Ao enviar, você será redirecionada para o WhatsApp com suas informações já preenchidas.</p>
+          <div class="smsg" id="smsg">Abrindo WhatsApp com seu briefing...</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctas">
+  <h2 class="rv">Cada dia sem um site<br/>profissional é um dia de<br/><span class="gt">vendas perdidas</span></h2>
+  <p class="rv d1">Enquanto você avalia, seus concorrentes estão conquistando os clientes que deveriam ser seus.</p>
+  <a href="https://wa.me/5511970866486?text=Olá!%20Quero%20começar%20meu%20projeto%20com%20a%20RNV360." target="_blank" rel="noopener" class="btn bp blg rv d2">Começar meu projeto agora</a>
+</section>
+
+<footer>
+  <div><div class="flogo">RNV<em>360</em></div><div class="fcopy">Criação de Sites e Landing Pages Profissionais</div></div>
+  <div class="flinks"><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#contato">Contato</a><a href="mailto:contato@rnv360.com.br">contato@rnv360.com.br</a></div>
+  <div style="font-size:11.5px;color:var(--w3)">© 2026 RNV360. Todos os direitos reservados.</div>
+</footer>
+
+<div class="waf">
+  <div class="walabel">Fale agora no WhatsApp</div>
+  <a href="https://wa.me/5511970866486?text=Olá!%20Vim%20pelo%20site%20da%20RNV360." target="_blank" rel="noopener" class="wabtn">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>40),{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Counter animation
+function animC(el,target,dur=1400){
+  const start=performance.now();
+  (function tick(now){
+    const p=Math.min((now-start)/dur,1);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(ease*target);
+    if(p<1)requestAnimationFrame(tick);
+    else el.textContent=target;
+  })(start);
+}
+const cobs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){animC(e.target,parseInt(e.target.dataset.t));cobs.unobserve(e.target)}})
+},{threshold:.5});
+document.querySelectorAll('.cnt').forEach(el=>cobs.observe(el));
+
+// FAQ
+function tF(el){
+  const item=el.parentElement,ans=item.querySelector('.fa'),open=item.classList.contains('open');
+  document.querySelectorAll('.fi').forEach(i=>{i.classList.remove('open');i.querySelector('.fa').style.maxHeight='0'});
+  if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
+}
+
+// Briefing expansível
+function toggleBriefing(){
+  const form=document.getElementById('briefing-form');
+  const icon=document.getElementById('briefing-icon');
+  const btn=document.getElementById('briefing-toggle');
+  const isOpen=form.style.opacity==='1';
+  if(isOpen){
+    form.style.maxHeight='0';
+    form.style.opacity='0';
+    icon.style.transform='rotate(0deg)';
+    btn.querySelector('span') && (btn.querySelector('span').textContent='Preencher briefing');
+  } else {
+    form.style.maxHeight=form.scrollHeight+600+'px';
+    form.style.opacity='1';
+    icon.style.transform='rotate(180deg)';
+  }
+}
+
+// Form — envia para WhatsApp com todos os dados
+function sF(e){
+  e.preventDefault();
+  const n=document.getElementById('fn').value.trim();
+  const p=document.getElementById('fp').value.trim();
+  const b=document.getElementById('fb').value.trim();
+  const s=document.getElementById('fs').value;
+  const m=document.getElementById('fm').value.trim();
+  if(!n||!p||!s){return;}
+  const texto=
+    `Olá! Preenchi o briefing no site da RNV360:\n\n`+
+    `👤 Nome: ${n}\n`+
+    `📱 WhatsApp: ${p}\n`+
+    `🏢 Negócio: ${b||'Não informado'}\n`+
+    `🎯 Serviço: ${s}\n`+
+    `📝 Projeto: ${m||'Não informado'}`;
+  const url=`https://wa.me/5511970866486?text=${encodeURIComponent(texto)}`;
+  const msg=document.getElementById('smsg');
+  msg.style.display='block';
+  setTimeout(()=>{window.open(url,'_blank');e.target.reset();},400);
+  setTimeout(()=>msg.style.display='none',5000);
+}
+</script>
+</body>
+</html>
