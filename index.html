@@ -3,10 +3,60 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>RNV360 — Criação de Sites e Landing Pages com Neurociência</title>
-<meta name="description" content="Criação de sites profissionais e landing pages de alta conversão com neurociência aplicada. Bio profissional para influenciadores. São Paulo e todo o Brasil."/>
-<meta name="keywords" content="criação de site profissional, landing page alta conversão, site para empresa, bio para influencer, agência de sites São Paulo, neuromarketing"/>
+
+<!-- SEO OTIMIZADO -->
+<title>RNV360 — Sites que Vendem | Neurociência Aplicada ao Design</title>
+<meta name="description" content="Seu site não está convertendo? Criamos sites e landing pages com neurociência aplicada — entrega em até 7 dias. Bio Site R$197 | Landing Page R$797. Atendemos todo o Brasil."/>
+<meta name="keywords" content="criação de site profissional, landing page alta conversão, site para empresa, bio para influencer, agência de sites São Paulo, neuromarketing, site que vende, criação de site Santana de Parnaíba"/>
 <link rel="canonical" href="https://rnv360.com.br/"/>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23070707'/><text y='.9em' font-size='60' x='10' fill='%23b794f4' font-family='system-ui' font-weight='900'>R</text></svg>"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23070707'/><text y='.9em' font-size='60' x='10' fill='%23b794f4' font-family='system-ui' font-weight='900'>R</text></svg>"/>
+
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="RNV360 — Sites que Vendem | Neurociência Aplicada ao Design"/>
+<meta property="og:description" content="Seu site não está convertendo? Criamos sites e landing pages com neurociência aplicada — entrega em até 7 dias. Bio Site R$197 | Landing Page R$797."/>
+<meta property="og:url" content="https://rnv360.com.br/"/>
+<meta property="og:site_name" content="RNV360"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:image" content="https://rnv360.com.br/imagens/og-rnv360.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="RNV360 — Criação de Sites com Neurociência"/>
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="RNV360 — Sites que Vendem"/>
+<meta name="twitter:description" content="Sites e landing pages com neurociência aplicada. Entrega em até 7 dias."/>
+<meta name="twitter:image" content="https://rnv360.com.br/imagens/og-rnv360.jpg"/>
+
+<!-- ROBOTS -->
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="RNV360 — Aline França"/>
+
+<!-- SCHEMA ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "RNV360",
+  "description": "Criação de sites e landing pages com neurociência aplicada",
+  "url": "https://rnv360.com.br",
+  "telephone": "+5511970866486",
+  "email": "contato@rnv360.com.br",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santana de Parnaíba",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "priceRange": "R$197 - R$1697",
+  "serviceArea": "Brasil"
+}
+</script>
+
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CTHYY284Y"></script>
 <script>
@@ -15,6 +65,7 @@
   gtag('js', new Date());
   gtag('config', 'G-7CTHYY284Y');
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -49,7 +100,6 @@ nav{
   display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid transparent;
   transition:background .4s,border-color .4s;
-  /* sem backdrop-filter para evitar tremido em iOS */
 }
 nav.sc{background:rgba(7,7,7,.97);border-bottom-color:var(--b)}
 .logo{font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.5px}
@@ -69,7 +119,7 @@ nav.sc{background:rgba(7,7,7,.97);border-bottom-color:var(--b)}
 .bo{background:transparent;color:var(--w);border:1px solid var(--b2)}
 .bo:hover{border-color:var(--a);color:var(--a)}
 .blg{padding:14px 32px;font-size:15px}
-/* HERO — sem position:fixed internos que causam tremido */
+/* HERO */
 .hero{
   min-height:100svh;
   display:flex;flex-direction:column;
@@ -78,7 +128,6 @@ nav.sc{background:rgba(7,7,7,.97);border-bottom-color:var(--b)}
   padding:140px 48px 90px;
   position:relative;overflow:hidden;
 }
-/* Orbs via CSS puro sem JS animation para não interferir no scroll */
 .hero::before{
   content:'';position:absolute;
   width:600px;height:600px;border-radius:50%;
@@ -271,7 +320,6 @@ section{padding:100px 52px}
 /* TESTIMONIALS */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
 .tc{background:var(--d2);border:1px solid var(--b);border-radius:16px;padding:30px}
-.tres{height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;border:1px dashed var(--b2);border-radius:10px;color:var(--w3);font-size:12.5px;text-align:center}
 /* PROCESS */
 .prbg{background:var(--d1)}
 .prgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;background:var(--b);border:1px solid var(--b);border-radius:14px;overflow:hidden}
@@ -338,7 +386,7 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
 .flinks{display:flex;gap:26px}
 .flinks a{font-size:12.5px;color:var(--w3);transition:color .2s}
 .flinks a:hover{color:var(--w)}
-/* WHATSAPP — sem animation de float para não interferir no scroll iOS */
+/* WHATSAPP */
 .waf{position:fixed;bottom:24px;right:24px;z-index:200;display:flex;align-items:center;gap:10px}
 .walabel{background:var(--d2);border:1px solid var(--b2);border-radius:7px;padding:7px 12px;font-size:12px;font-weight:500;white-space:nowrap;opacity:0;transform:translateX(8px);transition:opacity .3s,transform .3s;pointer-events:none}
 .waf:hover .walabel{opacity:1;transform:translateX(0)}
@@ -503,7 +551,7 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
     <div>
       <div class="ctag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Oferta especial</div>
       <h3>Pacote Bio + Landing Page</h3>
-      <p class="cdesc">Bio Site (R$ 197) + Landing Page (R$ 797) = R$ 994 separados. No pacote você paga R$ 847 e economiza R$ 147. Ideal para quem quer presença digital completa: um bio site para as redes sociais e uma landing page para converter clientes.</p>
+      <p class="cdesc">Bio Site (R$ 197) + Landing Page (R$ 797) = R$ 994 separados. No pacote você paga R$ 847 e economiza R$ 147. Ideal para quem quer presença digital completa.</p>
     </div>
     <div class="cpb">
       <div class="cw">Separado: R$ 994</div>
@@ -521,12 +569,10 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
     <p class="ssub rv d2" style="margin:0 auto">Uma página completa de apresentação no seu link da bio. Veja como cada nicho pode ter uma identidade única e profissional.</p>
   </div>
   <div class="bgrid">
-
-    <!-- Modelo 1: Escuro/premium -->
     <div class="bioc rv">
       <div style="background:#1a0a0a;border-radius:12px 12px 0 0;overflow:hidden;aspect-ratio:9/16;position:relative;max-height:340px">
         <div style="width:100%;height:55%;position:relative;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Bio site exemplo dark premium" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.7)"/>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Bio site estilo dark premium para coaches e especialistas" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.7)"/>
           <div style="position:absolute;inset:0;background:linear-gradient(0deg,#1a0a0a 0%,transparent 60%)"></div>
           <p style="position:absolute;bottom:10px;right:10px;font-size:8px;color:rgba(255,255,255,.9);text-align:right;line-height:1.4;font-family:'Outfit',sans-serif;font-weight:600">EU ENTENDO O QUE<br/>VOCÊ SENTE.<br/>PORQUE EU JÁ SENTI.</p>
         </div>
@@ -535,11 +581,6 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
           <p style="font-size:7px;color:rgba(240,237,232,.7);line-height:1.5;margin-bottom:10px">Especialista em neurociência e comportamento humano. Traduzo a ciência em linguagem real.</p>
           <div style="background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:20px;padding:7px 12px;text-align:center;margin-bottom:6px">
             <p style="font-size:7px;color:#c9a84c;font-weight:600;letter-spacing:1px">CONHECER O MÉTODO</p>
-          </div>
-          <div style="display:flex;justify-content:center;gap:10px;margin-top:8px">
-            <div style="width:18px;height:18px;border:1px solid rgba(201,168,76,.4);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div>
-            <div style="width:18px;height:18px;border:1px solid rgba(201,168,76,.4);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#c9a84c" stroke="none"/></svg></div>
-            <div style="width:18px;height:18px;border:1px solid rgba(201,168,76,.4);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="#c9a84c" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.04-8.56a8.16 8.16 0 0 0 4.76 1.52V4.82a4.85 4.85 0 0 1-2.95-.13z"/></svg></div>
           </div>
         </div>
       </div>
@@ -550,12 +591,10 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
         <div class="bnote"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Design criado do zero com sua identidade visual</div>
       </div>
     </div>
-
-    <!-- Modelo 2: Claro/natural -->
     <div class="bioc rv d1">
       <div style="background:#faf8f5;border-radius:12px 12px 0 0;overflow:hidden;aspect-ratio:9/16;max-height:340px">
         <div style="width:100%;height:52%;position:relative;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Bio site exemplo clean natural" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.85) saturate(.9)"/>
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Bio site estilo clean natural para nutricionistas e saúde" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.85) saturate(.9)"/>
           <div style="position:absolute;inset:0;background:linear-gradient(0deg,#faf8f5 0%,transparent 55%)"></div>
           <p style="position:absolute;bottom:10px;left:12px;font-size:9px;color:#2d1f0e;line-height:1.4;font-family:'Outfit',sans-serif;font-weight:700">NUTRIÇÃO SEM<br/>CULPA E SEM<br/>SOFRIMENTO.</p>
         </div>
@@ -564,13 +603,6 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
           <p style="font-size:7px;color:#5a4020;line-height:1.5;margin-bottom:10px">Nutricionista clínica. Ajudo mulheres a emagrecer sem abandonar a vida social.</p>
           <div style="background:#2d6a2d;border-radius:20px;padding:7px 12px;text-align:center;margin-bottom:6px">
             <p style="font-size:7px;color:#fff;font-weight:600;letter-spacing:1px">AGENDAR CONSULTA</p>
-          </div>
-          <div style="border:1px solid #ddd;border-radius:20px;padding:6px 12px;text-align:center;margin-bottom:8px">
-            <p style="font-size:7px;color:#5a4020;font-weight:600;letter-spacing:1px">GUIA GRATUITO</p>
-          </div>
-          <div style="display:flex;justify-content:center;gap:10px;margin-top:6px">
-            <div style="width:18px;height:18px;border:1px solid #ddd;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#8b6914" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div>
-            <div style="width:18px;height:18px;border:1px solid #ddd;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#8b6914" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#8b6914" stroke="none"/></svg></div>
           </div>
         </div>
       </div>
@@ -581,12 +613,10 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
         <div class="bnote"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cores e estilo adaptados ao seu nicho</div>
       </div>
     </div>
-
-    <!-- Modelo 3: Escuro tech/negócios (homem) -->
     <div class="bioc rv d2">
       <div style="background:#0a0f1a;border-radius:12px 12px 0 0;overflow:hidden;aspect-ratio:9/16;max-height:340px">
         <div style="width:100%;height:52%;position:relative;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Bio site exemplo tech negócios" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.6) saturate(.7)"/>
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Bio site estilo tech negócios para empreendedores e mentores" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.6) saturate(.7)"/>
           <div style="position:absolute;inset:0;background:linear-gradient(0deg,#0a0f1a 0%,transparent 55%)"></div>
           <p style="position:absolute;bottom:10px;left:12px;font-size:9px;color:#fff;line-height:1.4;font-family:'Outfit',sans-serif;font-weight:700">DO ZERO AO<br/>PRIMEIRO<br/><span style="color:#4f8ef7">FATURAMENTO.</span></p>
         </div>
@@ -595,14 +625,6 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
           <p style="font-size:7px;color:rgba(255,255,255,.6);line-height:1.5;margin-bottom:10px">Fundador de 3 empresas. Mentor de empreendedores. Mais de 200 negócios estruturados.</p>
           <div style="background:linear-gradient(135deg,#4f8ef7,#7c6ff7);border-radius:20px;padding:7px 12px;text-align:center;margin-bottom:6px">
             <p style="font-size:7px;color:#fff;font-weight:600;letter-spacing:1px">MENTORIA GRATUITA</p>
-          </div>
-          <div style="border:1px solid rgba(79,142,247,.3);border-radius:20px;padding:6px 12px;text-align:center;margin-bottom:8px">
-            <p style="font-size:7px;color:#4f8ef7;font-weight:600;letter-spacing:1px">VER CONTEÚDO</p>
-          </div>
-          <div style="display:flex;justify-content:center;gap:10px;margin-top:6px">
-            <div style="width:18px;height:18px;border:1px solid rgba(79,142,247,.3);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div>
-            <div style="width:18px;height:18px;border:1px solid rgba(79,142,247,.3);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
-            <div style="width:18px;height:18px;border:1px solid rgba(79,142,247,.3);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 24 24" fill="#4f8ef7" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.04-8.56a8.16 8.16 0 0 0 4.76 1.52V4.82a4.85 4.85 0 0 1-2.95-.13z"/></svg></div>
           </div>
         </div>
       </div>
@@ -613,7 +635,6 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
         <div class="bnote"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cada bio site é único — criado do zero para você</div>
       </div>
     </div>
-
   </div>
   <div style="text-align:center;margin-top:44px" class="rv">
     <p style="color:var(--w3);font-size:14px;margin-bottom:22px">Cada bio site é único — criado do zero com a sua identidade visual, suas cores e seus links.</p>
@@ -628,77 +649,41 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
     <p class="ssub rv d2" style="margin:0 auto">Cada site foi construído para fazer o visitante sentir confiança, permanecer na página e tomar uma decisão. Clique para ver.</p>
   </div>
   <div class="pt-list rv" style="margin-top:64px;display:flex;flex-direction:column;gap:2px">
-
-    <a href="https://servuscontabil.com.br" target="_blank" rel="noopener" class="pt-item">
-      <div class="pt-item-left">
-        <div class="pt-num">01</div>
-        <div>
-          <div class="pt-name">Servus Contábil</div>
-          <div class="pt-desc">Contabilidade para igrejas — posicionamento premium com identidade de fé</div>
-        </div>
-      </div>
-      <div class="pt-tag">Site completo</div>
-      <div class="pt-arrow">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </div>
-    </a>
-
     <a href="https://wfcont.com.br" target="_blank" rel="noopener" class="pt-item">
-      <div class="pt-item-left">
-        <div class="pt-num">02</div>
-        <div>
-          <div class="pt-name">WF Consultoria Contábil</div>
-          <div class="pt-desc">Site institucional com múltiplos serviços e captação de leads</div>
-        </div>
-      </div>
+      <div class="pt-item-left"><div class="pt-num">01</div><div><div class="pt-name">WF Consultoria Contábil</div><div class="pt-desc">Site institucional com múltiplos serviços e captação de leads</div></div></div>
       <div class="pt-tag">Site completo</div>
-      <div class="pt-arrow">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </div>
+      <div class="pt-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
     </a>
-
     <a href="https://nexustaxbrasil.com.br" target="_blank" rel="noopener" class="pt-item">
-      <div class="pt-item-left">
-        <div class="pt-num">03</div>
-        <div>
-          <div class="pt-name">Nexus Tax Brasil</div>
-          <div class="pt-desc">Consultoria tributária internacional — credibilidade e expertise global</div>
-        </div>
-      </div>
+      <div class="pt-item-left"><div class="pt-num">02</div><div><div class="pt-name">Nexus Tax Brasil</div><div class="pt-desc">Consultoria tributária internacional — credibilidade e expertise global</div></div></div>
       <div class="pt-tag">Site completo</div>
-      <div class="pt-arrow">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </div>
+      <div class="pt-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
     </a>
-
-    <a href="http://tactusdesign.com.br" target="_blank" rel="noopener" class="pt-item">
-      <div class="pt-item-left">
-        <div class="pt-num">04</div>
-        <div>
-          <div class="pt-name">Tactus Design</div>
-          <div class="pt-desc">Móveis planejados — design premium com foco em conversão</div>
-        </div>
-      </div>
-      <div class="pt-tag">Site completo</div>
-      <div class="pt-arrow">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </div>
-    </a>
-
     <a href="https://mri.alinefranca360.com.br" target="_blank" rel="noopener" class="pt-item">
-      <div class="pt-item-left">
-        <div class="pt-num">05</div>
-        <div>
-          <div class="pt-name">MRI — Método Reconexão Interna</div>
-          <div class="pt-desc">Landing page de alta conversão com neurociência aplicada e copy emocional</div>
-        </div>
-      </div>
+      <div class="pt-item-left"><div class="pt-num">03</div><div><div class="pt-name">MRI — Método Reconexão Interna</div><div class="pt-desc">Landing page de alta conversão com neurociência aplicada e copy emocional</div></div></div>
       <div class="pt-tag">Landing page</div>
-      <div class="pt-arrow">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </div>
+      <div class="pt-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
     </a>
-
+    <a href="https://bio.alinefranca360.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left"><div class="pt-num">04</div><div><div class="pt-name">Aline França — Bio Site</div><div class="pt-desc">Bio site dark premium para criadora de conteúdo e especialista em neurociência</div></div></div>
+      <div class="pt-tag">Bio site</div>
+      <div class="pt-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+    </a>
+    <a href="https://biowf.wfcont.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left"><div class="pt-num">05</div><div><div class="pt-name">Washington — Bio Site WF Contábil</div><div class="pt-desc">Bio site profissional para sócio de consultoria contábil</div></div></div>
+      <div class="pt-tag">Bio site</div>
+      <div class="pt-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+    </a>
+    <a href="https://servuscontabil.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left"><div class="pt-num">06</div><div><div class="pt-name">Servus Contábil</div><div class="pt-desc">Contabilidade para igrejas — posicionamento premium com identidade de fé</div></div></div>
+      <div class="pt-tag">Site completo</div>
+      <div class="pt-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+    </a>
+    <a href="http://tactusdesign.com.br" target="_blank" rel="noopener" class="pt-item">
+      <div class="pt-item-left"><div class="pt-num">07</div><div><div class="pt-name">Tactus Design</div><div class="pt-desc">Móveis planejados — design premium com foco em conversão</div></div></div>
+      <div class="pt-tag">Site completo</div>
+      <div class="pt-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+    </a>
   </div>
 </section>
 
@@ -709,7 +694,7 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
   </div>
   <div class="tgrid">
     <div class="tc rv">
-      <div class="test-stars" style="display:flex;gap:3px;margin-bottom:14px">
+      <div style="display:flex;gap:3px;margin-bottom:14px">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -723,7 +708,7 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
       </div>
     </div>
     <div class="tc rv d1">
-      <div class="test-stars" style="display:flex;gap:3px;margin-bottom:14px">
+      <div style="display:flex;gap:3px;margin-bottom:14px">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -737,14 +722,14 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
       </div>
     </div>
     <div class="tc rv d2">
-      <div class="test-stars" style="display:flex;gap:3px;margin-bottom:14px">
+      <div style="display:flex;gap:3px;margin-bottom:14px">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       </div>
-      <p style="font-size:14.5px;color:var(--w2);line-height:1.75;font-style:italic;margin-bottom:22px">"Estou muito contente com o resultado. Em poucas semanas as vendas cresceram e muitos clientes vieram pelo site."</p>
+      <p style="font-size:14.5px;color:var(--w2);line-height:1.75;font-style:italic;margin-bottom:22px">"Em poucas semanas as vendas cresceram e muitos clientes vieram pelo site. Resultado real."</p>
       <div style="display:flex;align-items:center;gap:12px">
         <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--a3),var(--a));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:#fff;flex-shrink:0">T</div>
         <div><div style="font-size:14px;font-weight:600">Tomaz S.</div><div style="font-size:11.5px;color:var(--w3)">Cliente RNV360</div></div>
@@ -778,6 +763,7 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
     <div class="fi rv"><div class="fq" onclick="tF(this)">E se eu não gostar do resultado?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">O processo inclui revisões. Você aprova a estrutura antes do desenvolvimento e o design antes de publicarmos. Trabalhamos com transparência total para garantir que o resultado seja o que você esperava.</div></div></div>
     <div class="fi rv"><div class="fq" onclick="tF(this)">Inclui hospedagem e domínio?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">Domínio e hospedagem são contratados por você para que tenha controle total sem depender de terceiros. Indicamos parceiros com preços acessíveis e auxiliamos toda a configuração sem custo adicional.</div></div></div>
     <div class="fi rv"><div class="fq" onclick="tF(this)">Quando começo a ver resultados?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">Com tráfego pago pode ser nas primeiras semanas. Com SEO orgânico, de 3 a 6 meses. O que garantimos é que a estrutura do site está preparada para converter todo tráfego que chegar.</div></div></div>
+    <div class="fi rv"><div class="fq" onclick="tF(this)">Funciona para qualquer tipo de negócio?<div class="farr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="fa"><div class="fai">Sim. Já desenvolvemos para contabilidade, saúde, coaching, moda, móveis planejados, consultoria e muito mais. A neurociência de conversão funciona para qualquer nicho — o que muda é a copy e o visual, adaptados para o seu público.</div></div></div>
   </div>
 </section>
 
@@ -810,12 +796,10 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
     <div class="cfc rv d2">
       <h3 style="font-size:20px;margin-bottom:7px">Briefing rápido</h3>
       <p style="font-size:13px;color:var(--w3);margin-bottom:20px">Clique abaixo, preencha em menos de 2 minutos e receba uma proposta personalizada.</p>
-
       <button onclick="toggleBriefing()" id="briefing-toggle" class="fbtn" style="margin-bottom:0;display:flex;align-items:center;justify-content:center;gap:10px">
         <svg id="briefing-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         Preencher briefing
       </button>
-
       <div id="briefing-form" style="max-height:0;overflow:hidden;transition:max-height .5s ease,opacity .4s ease;opacity:0">
         <form onsubmit="sF(event)" style="margin-top:20px">
           <div class="fg"><label class="fl" for="fn">Seu nome</label><input type="text" id="fn" class="fc" placeholder="Como podemos te chamar?" required autocomplete="name"/></div>
@@ -861,17 +845,14 @@ footer{background:var(--d1);border-top:1px solid var(--b);padding:38px 52px;disp
 </div>
 
 <script>
-// Nav scroll
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>40),{passive:true});
 
-// Reveal on scroll
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})
 },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-// Counter animation
 function animC(el,target,dur=1400){
   const start=performance.now();
   (function tick(now){
@@ -887,24 +868,20 @@ const cobs=new IntersectionObserver(entries=>{
 },{threshold:.5});
 document.querySelectorAll('.cnt').forEach(el=>cobs.observe(el));
 
-// FAQ
 function tF(el){
   const item=el.parentElement,ans=item.querySelector('.fa'),open=item.classList.contains('open');
   document.querySelectorAll('.fi').forEach(i=>{i.classList.remove('open');i.querySelector('.fa').style.maxHeight='0'});
   if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
 }
 
-// Briefing expansível
 function toggleBriefing(){
   const form=document.getElementById('briefing-form');
   const icon=document.getElementById('briefing-icon');
-  const btn=document.getElementById('briefing-toggle');
   const isOpen=form.style.opacity==='1';
   if(isOpen){
     form.style.maxHeight='0';
     form.style.opacity='0';
     icon.style.transform='rotate(0deg)';
-    btn.querySelector('span') && (btn.querySelector('span').textContent='Preencher briefing');
   } else {
     form.style.maxHeight=form.scrollHeight+600+'px';
     form.style.opacity='1';
@@ -912,7 +889,6 @@ function toggleBriefing(){
   }
 }
 
-// Form — envia para WhatsApp com todos os dados
 function sF(e){
   e.preventDefault();
   const n=document.getElementById('fn').value.trim();
